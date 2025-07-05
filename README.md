@@ -26,7 +26,7 @@ const [currentUser, setCurrentUser] = useState(
 );
 ```
 
-### 1⃣ Client Connection
+### Client Connection
 
 ```js
 io.on('connection', async (socket) => {
@@ -37,7 +37,7 @@ Every time a user opens the app (or a new browser tab), a new connection is esta
 
 ---
 
-### 2⃣ Sending Previous Messages on Connect
+### Sending Previous Messages on Connect
 
 ```js
 const messages = await getMessages();
@@ -49,7 +49,7 @@ socket.emit('message_history', messages);
 
 ---
 
-### 3⃣ Sending New Messages
+### Sending New Messages
 
 ```js
 socket.on('send_message', async (data) => {
@@ -63,7 +63,7 @@ socket.on('send_message', async (data) => {
 
 ---
 
-### 4⃣ Saving Messages to the Database
+### Saving Messages to the Database
 
 ```js
 const newMessage = new Message({
@@ -79,7 +79,7 @@ return await newMessage.save();
 
 ---
 
-### 5⃣ Disconnecting the Client
+### Disconnecting the Client
 
 ```js
 socket.on('disconnect', () => {
